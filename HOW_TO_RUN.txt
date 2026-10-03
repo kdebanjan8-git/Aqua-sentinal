@@ -1,0 +1,99 @@
+================================================================================
+          JAL-SATARK: REGIONAL WATER & HEALTH INTELLIGENCE PLATFORM
+                     HOW TO RUN ON ANY MACHINE (STEP-BY-STEP)
+================================================================================
+
+PREREQUISITES:
+1. Node.js (v18.0+ or v20.0+) -> https://nodejs.org/
+2. Python (3.10+ or 3.11+) -> https://www.python.org/ (Check "Add to PATH")
+3. Optional for local LLM: Ollama -> https://ollama.ai/
+
+--------------------------------------------------------------------------------
+STEP 1: FIRST-TIME SETUP (RUN ONCE ONLY)
+--------------------------------------------------------------------------------
+
+Open your terminal in the extracted project folder and run:
+
+1. Install Backend Dependencies:
+   cd backend
+   npm install
+   cd ..
+
+2. Install Frontend Dependencies:
+   cd frontend
+   npm install
+   cd ..
+
+3. Install ML Engine Dependencies & Verify Model:
+   cd ml-service
+   python -m venv venv
+   venv\Scripts\activate       (On Linux/macOS: source venv/bin/activate)
+   pip install -r requirements.txt
+   python app/services/train_model.py
+   cd ..
+
+4. (Optional) Run Local Llama-3 AI:
+   ollama run llama3
+
+--------------------------------------------------------------------------------
+STEP 2: 1-CLICK SCRIPTS (SUBSEQUENT RUNS)
+--------------------------------------------------------------------------------
+
+1. LAUNCH APPLICATION & AUTO-OPEN BROWSER:
+   Double-click "launch.bat" in the project root!
+   - Starts ML Service (Port 8000), Backend (Port 5000), Frontend (Port 5173).
+   - Waits for frontend to be ready and automatically opens http://localhost:5173.
+
+2. GENERATE INSTANT PUBLIC HTTPS LINK (FOR OTHER DEVICES / PHONES):
+   Double-click "share_link.bat" in the project root!
+   - Creates a secure public HTTPS link via localtunnel (e.g. https://xxxx.loca.lt).
+
+3. CLEAN SHUTDOWN (TERMINATE ALL SERVICES & FREE PORTS):
+   Double-click "stop.bat" in the project root!
+   - Releases ports 5173, 5000, 8000 to prevent orphaned processes.
+
+4. CREATE DESKTOP SHORTCUT (1-CLICK CONVENIENCE):
+   Double-click "create_desktop_shortcut.bat" in the project root!
+   - Installs a "Jal-Satark" icon on your Desktop to launch the system anytime.
+
+--------------------------------------------------------------------------------
+MANUAL ALTERNATIVE (OPEN 3 TERMINALS)
+--------------------------------------------------------------------------------
+   Terminal 1 (Backend API):
+     cd backend
+     npm start
+     -> Running on http://localhost:5000
+
+   Terminal 2 (ML Engine):
+     cd ml-service
+     venv\Scripts\activate     (On Linux/macOS: source venv/bin/activate)
+     python -m uvicorn app.main:app --port 8000 --reload
+     -> Running on http://localhost:8000 (Swagger docs at /docs)
+
+   Terminal 3 (Frontend UI):
+     cd frontend
+     npm run dev
+     -> Running on http://localhost:5173
+
+--------------------------------------------------------------------------------
+DEMO LOGIN CREDENTIALS (OR USE 1-CLICK DEMO BUTTONS IN LOGIN MODAL)
+--------------------------------------------------------------------------------
+1. District Health Admin (Full Command Center & Database Explorer):
+   Email:    admin@jalsatark.gov.in
+   Password: Admin@123
+
+2. ASHA Worker (Field Surveillance Desk & Proxy Registration):
+   Email:    healthworker@jalsatark.gov.in
+   Password: Health@123
+
+3. Citizen / Volunteer (Public Health Desk & Encrypted Dispatch):
+   Email:    citizen@jalsatark.gov.in
+   Password: Citizen@123
+
+--------------------------------------------------------------------------------
+RUNNING AUTOMATED TEST SUITES
+--------------------------------------------------------------------------------
+- Backend & RBAC Tests (27 tests):  cd backend && npm test
+- ML Service Tests (11 tests):      cd ml-service && python tests/run_tests.py
+- Frontend Production Build:        cd frontend && npm run build
+================================================================================

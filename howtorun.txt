@@ -1,0 +1,27 @@
+# 1. Start Ollama (Optional)
+
+ollama run llama3.2
+
+# 2. Start ML Microservice
+
+cd ml-service
+python -m uvicorn app.main:app --port 8000 --reload
+
+# 3. Start Backend
+
+npm start
+
+# 4. Start Frontend
+ 
+npm run dev
+
+tests:
+
+cd ml-service
+python tests/run_tests.py
+
+
+frontend build:
+
+cd frontend
+npm run build

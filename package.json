@@ -1,0 +1,31 @@
+{
+  "name": "aqua-sentinel-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smart Community Health Monitoring & Early Warning System for Water-Borne Diseases",
+  "scripts": {
+    "start": "start_all.bat",
+    "dev": "start_all.bat",
+    "launch": "launch.bat",
+    "stop": "stop.bat",
+    "start:backend": "cd backend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "start:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "start:ml": "cd ml-service && python -m uvicorn app.main:app --port 8000 --reload",
+    "test": "npm run test:backend && npm run test:ml",
+    "test:backend": "cd backend && npm test",
+    "test:ml": "cd ml-service && python tests/run_tests.py",
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down"
+  },
+  "keywords": [
+    "water-quality",
+    "disease-surveillance",
+    "postgis",
+    "machine-learning",
+    "react-leaflet"
+  ],
+  "author": "AquaSentinel Team",
+  "license": "MIT"
+}

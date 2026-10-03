@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.015em;
+  }
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Emergency Response Components (Default / Citizen & ASHA Theme) */
+@layer components {
+  .hud-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+  }
+
+  .clean-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .clean-card:hover {
+    box-shadow: 0 10px 25px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+  }
+}
+
+/* =========================================================
+   DISTRICT HEALTH ADMIN: ULTRA-DARK COMMAND-CENTER THEME
+   ========================================================= */
+[data-role="district_admin"],
+[data-theme="command-dark"] {
+  background-color: #070b14 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-role="district_admin"] .clean-card,
+[data-theme="command-dark"] .clean-card {
+  background: rgba(13, 20, 36, 0.88) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(30, 41, 59, 0.8) !important;
+  color: #f1f5f9 !important;
+  box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.6), 0 0 20px -3px rgba(13, 148, 136, 0.08) !important;
+}
+
+[data-role="district_admin"] .clean-card:hover,
+[data-theme="command-dark"] .clean-card:hover {
+  border-color: rgba(45, 212, 191, 0.35) !important;
+  box-shadow: 0 10px 30px -3px rgba(0, 0, 0, 0.75), 0 0 25px -2px rgba(13, 148, 136, 0.18) !important;
+}
+
+[data-role="district_admin"] .hud-card,
+[data-theme="command-dark"] .hud-card {
+  background: rgba(10, 15, 29, 0.94) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(45, 212, 191, 0.25) !important;
+  color: #f1f5f9 !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8), 0 0 20px -3px rgba(13, 148, 136, 0.15) !important;
+}
+
+[data-role="district_admin"] header,
+[data-theme="command-dark"] header {
+  background: rgba(7, 11, 20, 0.96) !important;
+  border-color: rgba(30, 41, 59, 0.9) !important;
+}
+
+[data-role="district_admin"] nav,
+[data-theme="command-dark"] nav {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-color: rgba(30, 41, 59, 0.9) !important;
+}
+
+[data-role="district_admin"] nav button,
+[data-theme="command-dark"] nav button {
+  color: #94a3b8;
+}
+
+[data-role="district_admin"] nav button:hover,
+[data-theme="command-dark"] nav button:hover {
+  color: #f8fafc;
+  background: rgba(30, 41, 59, 0.6);
+}
+
+[data-role="district_admin"] .text-slate-900,
+[data-theme="command-dark"] .text-slate-900 {
+  color: #f8fafc !important;
+}
+
+[data-role="district_admin"] .text-slate-800,
+[data-theme="command-dark"] .text-slate-800 {
+  color: #f1f5f9 !important;
+}
+
+[data-role="district_admin"] .text-slate-700,
+[data-theme="command-dark"] .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+[data-role="district_admin"] .text-slate-600,
+[data-theme="command-dark"] .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+[data-role="district_admin"] .text-slate-500,
+[data-theme="command-dark"] .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+[data-role="district_admin"] .bg-slate-50,
+[data-theme="command-dark"] .bg-slate-50 {
+  background-color: rgba(15, 23, 42, 0.7) !important;
+}
+
+[data-role="district_admin"] .bg-white,
+[data-theme="command-dark"] .bg-white {
+  background-color: rgba(13, 20, 36, 0.9) !important;
+}
+
+[data-role="district_admin"] .border-slate-200,
+[data-role="district_admin"] .border-slate-100,
+[data-theme="command-dark"] .border-slate-200,
+[data-theme="command-dark"] .border-slate-100 {
+  border-color: rgba(30, 41, 59, 0.7) !important;
+}
+
+[data-role="district_admin"] table,
+[data-theme="command-dark"] table {
+  color: #cbd5e1;
+}
+
+[data-role="district_admin"] th,
+[data-theme="command-dark"] th {
+  background: rgba(15, 23, 42, 0.95) !important;
+  color: #94a3b8 !important;
+  border-color: rgba(30, 41, 59, 0.8) !important;
+}
+
+[data-role="district_admin"] tr:hover,
+[data-theme="command-dark"] tr:hover {
+  background: rgba(30, 41, 59, 0.4) !important;
+}
+
+[data-role="district_admin"] td,
+[data-theme="command-dark"] td {
+  border-color: rgba(30, 41, 59, 0.5) !important;
+}
+
+[data-role="district_admin"] input,
+[data-role="district_admin"] select,
+[data-role="district_admin"] textarea,
+[data-theme="command-dark"] input,
+[data-theme="command-dark"] select,
+[data-theme="command-dark"] textarea {
+  background-color: rgba(15, 23, 42, 0.9);
+  border-color: rgba(51, 65, 85, 0.8);
+  color: #f8fafc;
+}
+
+[data-role="district_admin"] .leaflet-container,
+[data-theme="command-dark"] .leaflet-container {
+  background: #070b14 !important;
+}
+
+[data-role="district_admin"] .leaflet-popup-content-wrapper,
+[data-theme="command-dark"] .leaflet-popup-content-wrapper {
+  background: rgba(10, 15, 29, 0.98) !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(45, 212, 191, 0.35) !important;
+  box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.9), 0 0 25px rgba(13, 148, 136, 0.25) !important;
+}
+
+[data-role="district_admin"] .leaflet-popup-tip,
+[data-theme="command-dark"] .leaflet-popup-tip {
+  background: #0a0f1d !important;
+  border: 1px solid rgba(45, 212, 191, 0.35) !important;
+}
+
+/* Custom Leaflet Map Container */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #e2e8f0;
+  font-family: inherit;
+  z-index: 10;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1;
+  border-radius: 1rem !important;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.18), 0 8px 10px -6px rgba(15, 23, 42, 0.1) !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+  line-height: 1.5;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1;
+}
+
+/* Pulse Animations for Emergency Red and Green */
+@keyframes pulse-emergency-red {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+}
+
+.pulse-red {
+  animation: pulse-emergency-red 1.8s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulse-emergency-green {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.pulse-green {
+  animation: pulse-emergency-green 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+[data-role="district_admin"] ::-webkit-scrollbar-track,
+[data-theme="command-dark"] ::-webkit-scrollbar-track {
+  background: #070b14;
+}
+[data-role="district_admin"] ::-webkit-scrollbar-thumb,
+[data-theme="command-dark"] ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+[data-role="district_admin"] ::-webkit-scrollbar-thumb:hover,
+[data-theme="command-dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
